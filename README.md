@@ -1,6 +1,6 @@
   # Job Assistant AI
 
-Job Assistant AI is an intelligent job application platform designed to automate and optimize the job search process. It scrapes job listings from various platforms, summarizes job details, and provides auto-resume generation to streamline applications.
+CarrerSync AI is an intelligent job application platform designed to automate and optimize the job search process. It scrapes job listings from various platforms, summarizes job details, and provides auto-resume generation to streamline applications.
 
 ## Features
 
