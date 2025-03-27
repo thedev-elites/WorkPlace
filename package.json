@@ -1,0 +1,15 @@
+{
+  "name": "internshala-job-portal",
+  "version": "1.0.0",
+  "description": "Job portal application with MongoDB integration",
+  "main": "index.js",
+  "scripts": {
+    "frontend": "cd Frontend && npm run dev",
+    "backend": "cd backend && npm run dev",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "install-all": "npm i && cd backend && npm i && cd ../Frontend && npm i"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 
