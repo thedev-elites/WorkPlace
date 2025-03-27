@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 # Auto-update dependencies
 import os
 import sys
