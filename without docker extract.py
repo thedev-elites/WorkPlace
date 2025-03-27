@@ -16,6 +16,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
+
 # Optimized dependency check to run only when needed
 def check_and_update_dependencies(force_check=False, auto_update=False, fast_mode=False):
     """
