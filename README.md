@@ -162,7 +162,7 @@ CareerSync AI is an intelligent job application platform designed to revolutioni
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+CareerSync AI is licensed under the [MIT License](https://github.com/thedev-elites/WorkPlace/blob/main/LICENSE.txt), allowing free use, modification, and distribution with proper attribution to © The Elite Gang Hackathon, ITM University Gwalior. For full terms and conditions, please refer to the [LICENSE.txt](https://github.com/thedev-elites/WorkPlace/blob/main/LICENSE.txt) file.
 
 ## 🏆 Hackathon Project
 
