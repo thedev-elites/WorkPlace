@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB Atlas IP Whitelist Automation Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #13aa52;
+            border-bottom: 2px solid #13aa52;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #13aa52;
+            margin-top: 30px;
+        }
+        .step {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #13aa52;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+        pre {
+            background-color: #282c34;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        .note {
+            background-color: #fff8e1;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        a {
+            color: #13aa52;
+        }
+    </style>
+</head>
+<body>
+    <h1>MongoDB Atlas IP Whitelist Automation Guide</h1>
+    
+    <p>This guide will help you set up the MongoDB Atlas API credentials needed to automatically update your IP whitelist, so you don't have to manually update it every time your IP changes.</p>
+
+    <div class="note">
+        <strong>Why this is useful:</strong> If you have a dynamic IP address (common with most home internet providers), you'll frequently need to update your IP in MongoDB Atlas. This automation solves that problem.
+    </div>
+
+    <h2>Step 1: Access Your MongoDB Atlas Account</h2>
+    <div class="step">
+        <p>Go to <a href="https://cloud.mongodb.com" target="_blank">https://cloud.mongodb.com</a> and sign in to your account.</p>
+    </div>
+
+    <h2>Step 2: Create API Keys</h2>
+    <div class="step">
+        <ol>
+            <li>In the top-right menu, click on your name/profile and select "Account"</li>
+            <li>In the left sidebar, go to "Access Manager" → "API Keys"</li>
+            <li>Click the "Create API Key" button</li>
+            <li>Enter a name for your key (e.g., "IP Whitelist Automation")</li>
+            <li>Choose the "Organization Owner" role (this is required to manage IP whitelist)</li>
+            <li>Click "Next"</li>
+            <li>Copy your "Public Key" - you'll need this for the .env file</li>
+            <li>Copy your "Private Key" - you'll need this for the .env file (you can only see this once!)</li>
+            <li>Click "Done"</li>
+        </ol>
+    </div>
+
+    <h2>Step 3: Get Your Project ID</h2>
+    <div class="step">
+        <ol>
+            <li>In the left sidebar, click on your project name</li>
+            <li>Go to "Project Settings" (in the left sidebar)</li>
+            <li>Find the "Project ID" field and copy this value</li>
+        </ol>
+    </div>
+
+    <h2>Step 4: Update Your .env File</h2>
+    <div class="step">
+        <p>Open the <code>backend/.env</code> file and add the following lines:</p>
+        <pre>
+# MongoDB Atlas API credentials
+MONGODB_PUBLIC_KEY=your_public_key
+MONGODB_PRIVATE_KEY=your_private_key
+MONGODB_PROJECT_ID=your_project_id</pre>
+        <p>Replace the placeholder values with the keys and ID you copied in the previous steps.</p>
+    </div>
+
+    <h2>Step 5: Install Dependencies</h2>
+    <div class="step">
+        <p>Open a terminal in the project root and run:</p>
+        <pre>cd scripts
+npm install</pre>
+    </div>
+
+    <h2>Step 6: Run the Script</h2>
+    <div class="step">
+        <p>You can now run the script in several ways:</p>
+        <ul>
+            <li>Double-click the <code>update-mongo-ip.bat</code> file in the scripts folder (Windows)</li>
+            <li>Run <code>npm run update-mongo-ip</code> from the project root</li>
+            <li>The script also runs automatically before starting the development server with <code>npm run dev</code></li>
+        </ul>
+        <p>The script will:</p>
+        <ol>
+            <li>Get your current public IP address</li>
+            <li>Check if it has changed since the last run</li>
+            <li>Update your MongoDB Atlas whitelist if needed</li>
+        </ol>
+    </div>
+
+    <div class="note">
+        <p><strong>Tip:</strong> You can add this script to run automatically at system startup or as a scheduled task for maximum convenience.</p>
+    </div>
+
+    <h2>Troubleshooting</h2>
+    <div class="step">
+        <p>If you encounter issues:</p>
+        <ul>
+            <li>Make sure your API keys have the correct permissions</li>
+            <li>Check that you've entered the correct Project ID</li>
+            <li>Verify your internet connection</li>
+            <li>Check the script output for specific error messages</li>
+        </ul>
+    </div>
+
+    <footer style="margin-top: 50px; text-align: center; font-size: 0.8em; color: #666;">
+        <p>For more information, see the <a href="README.md">README.md</a> file in the scripts directory.</p>
+    </footer>
+</body>
+</html> 
