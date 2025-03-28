@@ -7,13 +7,25 @@
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
+# 🚀 Project Setup
+
+Follow these steps to set up and run the project locally.
+
+## 📂 Install and Setup
+
+```bash
+cd frontend
+npm create vite@latest
+```
+
+Now, open a new terminal and continue with:
+
 ## 🚀 Quick Start
 
 Get everything up and running with a single command:
 
 ```bash
 npm run dev
-```
 
 That's it! This single command will:
 - Start the backend server
