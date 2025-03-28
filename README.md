@@ -15,7 +15,8 @@ Follow these steps to set up and run the project locally.
 
 ```bash
 cd frontend
-npm create vite@latest
+npm install
+npm install -g vite
 ```
 
 Now, open a new terminal and continue with:
