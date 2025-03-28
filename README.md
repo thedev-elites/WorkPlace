@@ -26,6 +26,7 @@ Get everything up and running with a single command:
 
 ```bash
 npm run dev
+```
 
 That's it! This single command will:
 - Start the backend server
