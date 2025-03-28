@@ -12,8 +12,7 @@ echo  3. Frontend Development Server
 echo.
 echo All services will run in separate windows.
 echo.
-echo Press any key to start...
-pause > nul
+echo Starting services automatically...
 
 echo.
 echo Starting MongoDB Atlas IP Whitelist Updater...

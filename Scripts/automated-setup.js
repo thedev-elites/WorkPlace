@@ -122,23 +122,16 @@ async function setup() {
     console.log('\n🌐 Updating MongoDB Atlas IP whitelist...');
     await runCommand('npm run update-mongo-ip');
     
-    // 4. Ask about auto-startup configuration
+    // 4. Configure auto-startup automatically
     console.log('\n🚀 Auto-startup configuration');
-    const configureStartup = await askQuestion('Would you like to configure auto-startup for all services? (y/n): ');
+    console.log('Automatically configuring auto-startup for all services...');
+    await runCommand('npm run configure-auto-startup');
+    console.log('✅ Auto-startup configured successfully.');
     
-    if (configureStartup.toLowerCase() === 'y') {
-      await runCommand('npm run configure-auto-startup');
-      console.log('✅ Auto-startup configured successfully.');
-    }
-    
-    // 5. Start all services
-    const startServices = await askQuestion('\nWould you like to start all services now? (y/n): ');
-    
-    if (startServices.toLowerCase() === 'y') {
-      console.log('\n🚀 Starting all services...');
-      // Use the batch file to start all services in separate windows
-      await runCommand('npm run start-all-windows');
-    }
+    // 5. Start all services automatically
+    console.log('\n🚀 Starting all services automatically...');
+    // Use the batch file to start all services in separate windows
+    await runCommand('npm run start-all-windows');
     
     console.log('\n=================================================');
     console.log('             SETUP COMPLETE!');
