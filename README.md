@@ -1,143 +1,135 @@
-# Automated Development Environment
+# CareerSync AI - Intelligent Job Application Platform
 
-This project includes a fully automated development environment setup that handles MongoDB Atlas IP whitelist management, backend and frontend services, and more.
+![CareerSync AI](https://img.shields.io/badge/Hackathon-ITM%20University%20Gwalior-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
 ## 🚀 Quick Start
 
 Get everything up and running with a single command:
 
 ```bash
-npm run setup
+npm run dev
 ```
 
-This will:
-1. Install all dependencies
-2. Set up MongoDB Atlas credentials
-3. Update your IP in MongoDB Atlas
-4. Configure auto-startup (optional)
-5. Start all services (optional)
+That's it! This single command will:
+- Start the backend server
+- Launch the frontend application
+- Set up MongoDB connection 
+- Initialize job scraping services
+- Configure all necessary components automatically
 
-## 📋 Available Commands
+No additional configuration needed - everything works seamlessly out of the box!
 
-### One-Command Solutions
+## 📌 Overview
 
-- `npm run setup` - Complete automated setup
-- `npm run start-all-windows` - Start all services in separate windows
-- `npm run start-all` - Start all services in one terminal
+CareerSync AI is an intelligent job application platform designed to revolutionize the job search process. Built for the ITM University Gwalior Hackathon, this application uses advanced AI techniques to automate and optimize every aspect of job hunting.
 
-### MongoDB Atlas IP Management
+## ✨ Key Features
 
-- `npm run update-mongo-ip` - Update your IP in MongoDB Atlas once
-- `npm run auto-update-ip` - Start daemon to keep your IP updated automatically
+### 🔍 Automated Job Discovery
+- **Multi-platform Job Scraping**: Automatically collects job listings from Internshala and other platforms
+- **Real-time Updates**: Continuously monitors for new job postings
+- **Smart Filtering**: Categorizes jobs by location, skill requirements, and other criteria
 
-### Services
+### 🤖 AI-Powered Application Assistance
+- **Resume Optimization**: Automatically tailors resumes to match job descriptions
+- **Application Auto-fill**: Uses GPT-4o to intelligently complete application forms
+- **Interview Preparation**: Generates potential interview questions based on job descriptions
 
-- `npm run frontend` - Start frontend server
-- `npm run backend` - Start backend server
-- `npm run dev` - Start both frontend and backend
+### 📊 Comprehensive Job Management
+- **Centralized Dashboard**: Track all applications from a single interface
+- **Status Tracking**: Monitor application progress in real-time
+- **Intelligent Recommendations**: Receive suggestions for jobs that match your profile
 
-### Automation
+### 🔒 Secure Data Handling
+- **Encrypted Storage**: All personal information is securely encrypted
+- **Privacy Controls**: Granular control over what information is shared
+- **Cached Job Details**: Efficient storage and retrieval of job information
 
-- `npm run configure-auto-startup` - Set up services to start automatically at login
+## 🛠️ Technology Stack
+
+### Backend
+- **Server**: Node.js with Express
+- **Database**: MongoDB Atlas
+- **Authentication**: JWT-based authentication
+- **API Integration**: Internshala API integration
+
+### Frontend
+- **Framework**: React with TypeScript
+- **Styling**: Tailwind CSS with Shadcn UI components
+- **State Management**: React Context API
+- **Routing**: React Router
+
+### AI & Automation
+- **Job Scraping**: Python with Selenium
+- **Natural Language Processing**: GPT-4o integration
+- **Resume Parsing**: Custom NLP algorithms
+- **Automated Form Filling**: Selenium WebDriver
+
+## 📋 System Architecture
+
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│                 │     │                 │     │                 │
+│  Frontend App   │◄────┤  Backend API    │◄────┤  MongoDB Atlas  │
+│  (React + TS)   │     │  (Node.js)      │     │  Database       │
+│                 │     │                 │     │                 │
+└────────┬────────┘     └────────┬────────┘     └─────────────────┘
+         │                       │
+         │                       │
+         │               ┌───────▼────────┐
+         │               │                │
+         └──────────────►│  Job Scraping  │
+                         │  Services (Py) │
+                         │                │
+                         └────────────────┘
+```
+
+## 🔧 Available Commands
+
+### Main Commands
+- `npm run dev` - Start both frontend and backend (use this!)
+- `npm run frontend` - Start only the frontend server
+- `npm run backend` - Start only the backend server
+
+### Advanced Commands
+- `npm run update-mongo-ip` - Update MongoDB Atlas IP whitelist
+- `npm run auto-update-ip` - Start daemon to auto-update IP
 - `npm run install-all` - Install all dependencies
+- `npm run start-all-windows` - Start all services in separate windows
 
-## ⚙️ How It Works
+## 🌟 Future Enhancements
 
-### Automated IP Management
+- **Multi-platform Integration**: Adding support for LinkedIn, Indeed, and more job platforms
+- **Mobile App**: Native mobile applications for iOS and Android
+- **Advanced Analytics**: Detailed insights on job market trends
+- **AI Interview Coach**: Interactive interview practice with feedback
+- **Networking Assistant**: Tools for professional networking and follow-ups
 
-The system automatically:
-1. Detects your current public IP address
-2. Checks if it has changed since last run
-3. Updates MongoDB Atlas IP whitelist via their API
-4. Keeps track of your last known IP
+## 👥 The Team
 
-### Multi-Service Startup
+- **Developer 1**: Frontend & UI/UX
+- **Developer 2**: Backend & Database
+- **Developer 3**: AI Integration & Job Scraping
+- **Developer 4**: System Architecture & DevOps
 
-- Each service runs in its own window for easier debugging
-- IP updater runs in the background checking for changes every 15 minutes
-- Updates happen automatically without interrupting your workflow
+## 📜 License
 
-## 🔑 Credentials
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-MongoDB Atlas credentials are securely stored in your `.env` file. If you need to update them:
+## 🏆 Hackathon Project
 
-1. Edit the `backend/.env` file
-2. Update these values:
-   ```
-   MONGODB_PUBLIC_KEY=your_public_key
-   MONGODB_PRIVATE_KEY=your_private_key
-   MONGODB_PROJECT_ID=your_project_id
-   ```
+This project was created for the ITM University Gwalior Hackathon. We aimed to solve the problem of inefficient job searching and application processes by leveraging AI and automation technologies.
 
-## 🔧 Troubleshooting
+## 🙏 Acknowledgements
 
-- Check log files in `Scripts/ip-daemon.log` and `Scripts/ip-update.log`
-- If services don't start, make sure all dependencies are installed
-- For MongoDB connection issues, check your IP in the Atlas dashboard
-
-# Job Assistant AI
-
-CarrerSync AI is an intelligent job application platform designed to automate and optimize the job search process. It scrapes job listings from various platforms, summarizes job details, and provides auto-resume generation to streamline applications.
-
-## Features
-
-- **Job Scraping:** Fetch job listings from platforms like Internshala, Glassdoor, and more.
-- **Job Description Summarization:** AI-generated concise descriptions of job roles.
-- **Auto Resume Building:** Automatically generates optimized resumes for different job applications.
-- **Application Auto-Fill:** Uses AI to answer application questions efficiently.
-- **Gmail Tracking:** Monitors job-related emails and provides updates.
-
-## Tech Stack
-
-- **Backend:** Flask API
-- **Frontend:** React
-- **Database:** MongoDB
-- **Automation:** Python scripts for job scraping and auto-applying
-- **Authentication:** Google OAuth 2.0
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/job-assistant-ai.git
-   cd job-assistant-ai
-   ```
-
-2. Set up the backend:
-   ```bash
-   cd backend
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   pip install -r requirements.txt
-   ```
-
-3. Set up the frontend:
-   ```bash
-   cd frontend
-   npm install
-   npm start
-   ```
-
-## Usage
-
-1. **Login with Google OAuth** to start using the platform.
-2. **View job listings** scraped from different platforms.
-3. **Enable auto-apply** to let the AI automatically fill applications.
-4. **Monitor your applications** and receive email updates.
-
-## Future Enhancements
-
-- Implement AI-powered interview preparation assistance.
-- Support for additional job platforms.
-- Advanced resume customization options.
-- Integration with LinkedIn for better job tracking.
-
-## Contributing
-
-We welcome contributions! Feel free to open issues or submit pull requests to improve the project.
-
-## License
-
-This project is licensed under the MIT License.
+- ITM University Gwalior for hosting the hackathon
+- MongoDB Atlas for database services
+- OpenAI for GPT integration capabilities
+- The open-source community for various tools and libraries used in this project
 
 
