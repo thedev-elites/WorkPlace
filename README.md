@@ -56,7 +56,7 @@ CareerSync AI is an intelligent job application platform designed to revolutioni
 - **Server**: Node.js with Express
 - **Database**: MongoDB Atlas
 - **Authentication**: JWT-based authentication
-- **API Integration**: Internshala API integration
+- **API Integration**: Chatgpt 4o API and Internshala Data Scraping integration
 
 ### Frontend
 - **Framework**: React with TypeScript
@@ -112,10 +112,39 @@ CareerSync AI is an intelligent job application platform designed to revolutioni
 
 ## 👥 The Team
 
-- **Developer 1**: Frontend & UI/UX
-- **Developer 2**: Backend & Database
-- **Developer 3**: AI Integration & Job Scraping
-- **Developer 4**: System Architecture & DevOps
+### Major Contributors
+
+- **Shivam Gupta**: 
+  - Developed all Python automation scripts
+  - Created the complete frontend interface ( landing page, login, signup page, DASHBOARD, Resume Builder, Auto-Apply )
+  - Built Completed the resume builder component
+  - Updated Dash
+  - Implemented MongoDB connectivity
+  - Fixed the IP address auto-update system for MongoDB Atlas
+  - Collaborated on backend route connectivity and file setup
+
+- **Rahul Gautam**:
+  - Implemented OAuth 2.0 Google authentication
+  - Developed backend connectivity from backend to frontend
+  - Built core API routes and services
+  - Find out the ChatGPT 4o API To Enhance the form Filling Part by ChatGPT Processing
+
+### Contributors
+
+- **Rahul Sharma**:
+  - Worked on hackathon presentation
+  - Conducted research and testing
+  - Provided user feedback for platform improvement
+
+- **Mansi Yadav**:
+  - Assisted with hackathon presentation materials
+  - Participated in testing and quality assurance
+  - Provided user experience feedback
+
+- **Abhishek**:
+  - Contributed to research and testing
+  - Acted as a feedback user for platform refinement
+  - Assisted with documentation
 
 ## 📜 License
 
@@ -130,6 +159,4 @@ This project was created for the ITM University Gwalior Hackathon. We aimed to s
 - ITM University Gwalior for hosting the hackathon
 - MongoDB Atlas for database services
 - OpenAI for GPT integration capabilities
-- The open-source community for various tools and libraries used in this project
-
-
+- The open-source community for various tools and libraries used in this project 
