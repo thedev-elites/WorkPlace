@@ -118,7 +118,7 @@ CareerSync AI is an intelligent job application platform designed to revolutioni
   - Developed all Python automation scripts
   - Created the complete frontend interface ( landing page, login, signup page, DASHBOARD, Resume Builder, Auto-Apply )
   - Built Completed the resume builder component
-  - Updated Dash
+  - Updated DashBoard Completely to Fetch jobs by Mongodb Clusters Database
   - Implemented MongoDB connectivity
   - Fixed the IP address auto-update system for MongoDB Atlas
   - Collaborated on backend route connectivity and file setup
